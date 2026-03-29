@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicios — Dorys López</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.servicios-full{padding:80px 8%;background:var(--black)}
+.servicios-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,45,122,.1)}
+.servicio-card{background:var(--black);padding:56px 44px;position:relative;overflow:hidden;transition:background .4s}
+.servicio-card:hover{background:var(--black3)}
+.servicio-card::after{content:'';position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--pink);transition:width .5s ease}
+.servicio-card:hover::after{width:100%}
+.s-num{font-family:'Bebas Neue',sans-serif;font-size:5rem;color:rgba(255,45,122,.06);line-height:1;margin-bottom:16px}
+.s-icon{width:52px;height:52px;background:rgba(255,45,122,.08);border:1px solid rgba(255,45,122,.15);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:24px}
+.servicio-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:.04em;color:var(--white);margin-bottom:14px;line-height:1}
+.servicio-card p{color:rgba(255,255,255,.45);line-height:1.8;font-size:.86rem;font-weight:300;margin-bottom:24px}
+.s-includes{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
+.s-includes li{font-size:.8rem;color:rgba(255,255,255,.4);display:flex;align-items:flex-start;gap:8px}
+.s-includes li::before{content:'✦';color:var(--pink);font-size:.55rem;margin-top:3px;flex-shrink:0}
+.s-price{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--pink);letter-spacing:.04em}
+.s-price small{font-family:'DM Sans',sans-serif;font-size:.75rem;color:var(--gray);font-weight:300;margin-left:4px}
+.s-link{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);text-decoration:none;font-weight:500;transition:gap .3s}
+.s-link:hover{gap:14px}
+.faq-section{padding:80px 8%;background:var(--black2);position:relative}
+.faq-section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--pink),transparent)}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,45,122,.1);margin-top:48px}
+.faq-item{background:var(--black2);padding:32px 28px;transition:background .3s}
+.faq-item:hover{background:var(--black3)}
+.faq-item h4{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.04em;color:var(--white);margin-bottom:10px}
+.faq-item p{color:rgba(255,255,255,.45);font-size:.84rem;line-height:1.7;font-weight:300}
+.cta-band{background:var(--pink);padding:80px 8%;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.cta-band h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3rem);letter-spacing:.04em;line-height:.95;color:var(--white)}
+.cta-band h2 em{font-family:'Playfair Display',serif;font-style:italic;color:rgba(0,0,0,.6)}
+@media(max-width:960px){
+  .servicios-grid{grid-template-columns:1fr}
+  .faq-grid{grid-template-columns:1fr}
+  .cta-band{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+<div class="cursor-glow" id="cursorGlow"></div>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">DORYS <span>LÓPEZ</span></a>
+  <ul class="nav-links" id="navMenu">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="nosotros.html">Sobre mí</a></li>
+    <li><a href="servicios.html" class="active">Servicios</a></li>
+    <li><a href="testimonios.html">Reseñas</a></li>
+    <li><a href="agenda.html" class="nav-cta">Agendar cita</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg">SERVICIOS</div>
+  <div class="section-label">Servicios</div>
+  <h1 class="section-title">TODO LO QUE<br><em>hago por ti</em></h1>
+  <p class="section-sub">Tratamientos profesionales diseñados para realzar tu belleza natural con técnicas de vanguardia y productos premium.</p>
+</div>
+
+<div class="ticker"><div class="ticker-track"><span class="ticker-item">Limpieza Facial Profunda</span><span class="ticker-item">Diseño de Cejas con Henna</span><span class="ticker-item">Micropigmentación de Labios</span><span class="ticker-item">Micropigmentación de Cejas</span><span class="ticker-item">Resultados Reales</span><span class="ticker-item">Agenda tu Cita Hoy</span><span class="ticker-item">Limpieza Facial Profunda</span><span class="ticker-item">Diseño de Cejas con Henna</span><span class="ticker-item">Micropigmentación de Labios</span><span class="ticker-item">Micropigmentación de Cejas</span><span class="ticker-item">Resultados Reales</span><span class="ticker-item">Agenda tu Cita Hoy</span></div></div>
+
+<section class="servicios-full">
+  <div class="servicios-grid">
+    <div class="servicio-card fade-in">
+      <div class="s-num">01</div>
+      <div class="s-icon">✨</div>
+      <h3>Limpieza Facial Profunda</h3>
+      <p>Tratamiento completo que elimina impurezas, puntos negros y células muertas. Devuelve luminosidad y salud a tu piel desde la primera sesión. Ideal para todo tipo de pieles, especialmente las mixtas y grasas.</p>
+      <ul class="s-includes">
+        <li>Análisis personalizado de piel</li>
+        <li>Desmaquillado y limpieza inicial</li>
+        <li>Vapor y apertura de poros</li>
+        <li>Extracción de comedones y puntos negros</li>
+        <li>Peeling enzimático o mecánico</li>
+        <li>Mascarilla regeneradora y calmante</li>
+        <li>Hidratación y protección final</li>
+        <li>Duración aprox. 75 minutos</li>
+      </ul>
+      <div class="s-price">Desde $XX.XXX <small>/ sesión</small></div>
+      <a href="agenda.html" class="s-link">Agendar ahora →</a>
+    </div>
+    <div class="servicio-card fade-in">
+      <div class="s-num">02</div>
+      <div class="s-icon">🌿</div>
+      <h3>Diseño de Cejas + Henna</h3>
+      <p>Diseño personalizado que enmarca tu rostro y define tu mirada. La henna tiñe el vello y la piel para un resultado natural de larga duración. Perfecta para quienes tienen cejas irregulares o con poco volumen.</p>
+      <ul class="s-includes">
+        <li>Mapeo y diseño según morfología facial</li>
+        <li>Depilación con hilo o cera</li>
+        <li>Perfilado de precisión</li>
+        <li>Preparación de la piel</li>
+        <li>Aplicación de henna profesional</li>
+        <li>Fijado y acabado</li>
+        <li>Resultado de 2 a 4 semanas en piel y 6 semanas en vello</li>
+        <li>Duración aprox. 60 minutos</li>
+      </ul>
+      <div class="s-price">Desde $XX.XXX <small>/ sesión</small></div>
+      <a href="agenda.html" class="s-link">Agendar ahora →</a>
+    </div>
+    <div class="servicio-card fade-in">
+      <div class="s-num">03</div>
+      <div class="s-icon">💋</div>
+      <h3>Micropigmentación de Labios</h3>
+      <p>Técnica semipermanente que define, colorea y da volumen a tus labios. Resultado natural y duradero que potencia tu sonrisa sin necesidad de maquillaje diario. Dura entre 1 y 3 años según el tipo de piel.</p>
+      <ul class="s-includes">
+        <li>Consulta y selección de tono personalizada</li>
+        <li>Diseño del contorno labial</li>
+        <li>Aplicación de anestesia tópica</li>
+        <li>Técnica acuarela o contorno definido</li>
+        <li>Pigmentos de alta calidad y larga duración</li>
+        <li>Cuidados post-tratamiento incluidos</li>
+        <li>Retoque de consolidación a las 4–6 semanas incluido</li>
+        <li>Duración aprox. 2 horas</li>
+      </ul>
+      <div class="s-price">Desde $XX.XXX <small>/ sesión</small></div>
+      <a href="agenda.html" class="s-link">Agendar ahora →</a>
+    </div>
+    <div class="servicio-card fade-in">
+      <div class="s-num">04</div>
+      <div class="s-icon">👁</div>
+      <h3>Micropigmentación de Cejas</h3>
+      <p>Cejas perfectas, simétricas y sin esfuerzo diario. Técnica pelo a pelo o sombreado para un resultado ultra-natural y duradero entre 1 y 3 años. Ideal para quienes tienen alopecia, cejas escasas o asimétricas.</p>
+      <ul class="s-includes">
+        <li>Diseño y mapeo facial previo</li>
+        <li>Selección de técnica y tono personalizado</li>
+        <li>Anestesia tópica incluida</li>
+        <li>Técnica pelo a pelo (microblading) o ombré powder</li>
+        <li>Pigmentos hipoalergénicos premium</li>
+        <li>Cuidados post-tratamiento incluidos</li>
+        <li>Retoque de consolidación a las 4–6 semanas incluido</li>
+        <li>Duración aprox. 2.5 horas</li>
+      </ul>
+      <div class="s-price">Desde $XX.XXX <small>/ sesión</small></div>
+      <a href="agenda.html" class="s-link">Agendar ahora →</a>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="section-label">Preguntas frecuentes</div>
+  <h2 class="section-title">LO QUE MÁS<br><em>me preguntan</em></h2>
+  <div class="faq-grid">
+    <div class="faq-item fade-in"><h4>¿Duele la micropigmentación?</h4><p>Se aplica anestesia tópica antes del procedimiento, por lo que la mayoría de las clientas describen la sensación como leve presión. Es muy tolerable.</p></div>
+    <div class="faq-item fade-in"><h4>¿Cuánto dura la micropigmentación?</h4><p>Entre 1 y 3 años según el tipo de piel, exposición al sol y cuidados posteriores. Se recomienda un retoque anual para mantener el color vibrante.</p></div>
+    <div class="faq-item fade-in"><h4>¿Con qué frecuencia debo hacer la limpieza facial?</h4><p>Lo ideal es cada 4 a 6 semanas. Dependiendo del tipo de piel y sus necesidades, puedo recomendarte una rutina personalizada.</p></div>
+    <div class="faq-item fade-in"><h4>¿La henna mancha la piel permanentemente?</h4><p>No, la henna es semipermanente. En la piel dura entre 2 y 4 semanas y en el vello hasta 6 semanas. Es completamente natural.</p></div>
+    <div class="faq-item fade-in"><h4>¿Necesito preparación previa?</h4><p>Para micropigmentación se recomienda no consumir anticoagulantes 72hs antes, evitar el sol intenso y llegar con la zona limpia y sin maquillaje.</p></div>
+    <div class="faq-item fade-in"><h4>¿Qué incluye el retoque?</h4><p>El retoque de consolidación (entre semana 4 y 6) está incluido en el precio de la micropigmentación y sirve para reforzar el color y corregir pequeños detalles.</p></div>
+  </div>
+</section>
+
+<div class="cta-band fade-in">
+  <h2>¿QUERÉS SABER CUÁL<br><em>servicio es para vos?</em></h2>
+  <a href="agenda.html" class="btn-dark">Consultar ahora →</a>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><div class="footer-logo">DORYS <span>LÓPEZ</span></div><p>Especialista en belleza facial. Transformando rostros con técnicas profesionales y resultados que hablan por sí solos.</p></div>
+    <div class="footer-col"><h5>Páginas</h5><ul><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Sobre mí</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="testimonios.html">Reseñas</a></li><li><a href="agenda.html">Agendar cita</a></li></ul></div>
+    <div class="footer-col"><h5>Contacto</h5><ul><li><a href="https://wa.me/TUNUMERO">WhatsApp</a></li><li><a href="https://www.instagram.com/">Instagram</a></li><li><a href="mailto:dorys@email.com">Email</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Dorys López</span><div class="social-links"><a href="https://www.instagram.com/" target="_blank">Instagram</a><a href="https://wa.me/TUNUMERO" target="_blank">WhatsApp</a></div></div>
+</footer>
+<a href="https://wa.me/TUNUMERO?text=Hola%20Dorys!" class="wa-float" target="_blank"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.528 5.845L0 24l6.338-1.501A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.66-.506-5.186-1.388l-.372-.22-3.764.891.93-3.666-.242-.383A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg></a>
+<script src="shared.js"></script>
+<script>document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));</script>
+</body>
+</html>

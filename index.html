@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dorys López — Especialista en Belleza Facial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+#inicio{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.hero-bg-text{position:absolute;bottom:-40px;left:-10px;font-family:'Bebas Neue',sans-serif;font-size:clamp(100px,18vw,220px);color:rgba(255,45,122,.04);white-space:nowrap;pointer-events:none;user-select:none;letter-spacing:.05em;line-height:1}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:120px 5% 80px 8%;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--pink);padding:7px 18px;width:fit-content;margin-bottom:36px;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);font-weight:500;clip-path:polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%)}
+.hero-badge::before{content:'✦';font-size:.6rem}
+.hero-left h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,7vw,7rem);line-height:.92;letter-spacing:.03em;color:var(--white);margin-bottom:28px}
+.stroke{-webkit-text-stroke:2px var(--pink);color:transparent}
+.hero-left p{font-size:.95rem;line-height:1.85;color:rgba(255,255,255,.55);max-width:420px;margin-bottom:44px;font-weight:300}
+.hero-stats{display:flex;gap:44px;margin-top:60px;padding-top:44px;border-top:1px solid rgba(255,255,255,.08)}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--pink);line-height:1}
+.stat-label{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin-top:4px}
+.hero-right{position:relative;overflow:hidden;background:linear-gradient(145deg,#1a1a1a,#0f0f0f);display:flex;align-items:center;justify-content:center}
+.hero-right::before{content:'';position:absolute;top:50%;left:50%;width:500px;height:500px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,45,122,.12) 0%,transparent 65%);pointer-events:none}
+.hero-img-frame{width:75%;max-width:380px;aspect-ratio:3/4;border:1px solid rgba(255,45,122,.2);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:rgba(255,255,255,.2);font-size:.85rem;letter-spacing:.1em;background:rgba(255,45,122,.03)}
+.hero-img-frame::before{content:'';position:absolute;top:12px;left:12px;right:12px;bottom:12px;border:1px solid rgba(255,45,122,.1);pointer-events:none}
+.fc{position:absolute;width:20px;height:20px;border-color:var(--pink);border-style:solid}
+.fc.tl{top:0;left:0;border-width:2px 0 0 2px}.fc.tr{top:0;right:0;border-width:2px 2px 0 0}
+.fc.bl{bottom:0;left:0;border-width:0 0 2px 2px}.fc.br{bottom:0;right:0;border-width:0 2px 2px 0}
+.hero-img-frame svg{opacity:.15;width:52px;height:52px}
+.hero-tag{position:absolute;bottom:32px;left:-20px;background:var(--pink);color:white;padding:14px 24px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;clip-path:polygon(0 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+.hero-tag strong{display:block;font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.1em}
+.servicios-preview{padding:100px 8%;background:var(--black)}
+.preview-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px}
+.servicios-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,45,122,.1)}
+.srv-mini{background:var(--black);padding:40px 30px;position:relative;overflow:hidden;transition:background .4s;text-decoration:none;display:block;color:inherit}
+.srv-mini:hover{background:var(--black3)}
+.srv-mini::after{content:'';position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--pink);transition:width .5s ease}
+.srv-mini:hover::after{width:100%}
+.srv-icon{font-size:2rem;margin-bottom:20px;display:block}
+.srv-mini h3{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.04em;color:var(--white);margin-bottom:10px;line-height:1.1}
+.srv-mini p{color:rgba(255,255,255,.4);font-size:.82rem;line-height:1.7;font-weight:300;margin-bottom:20px}
+.srv-arrow{color:var(--pink);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+.sobre-preview{background:var(--black2);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:100px 8%;gap:80px;position:relative}
+.sobre-preview::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--pink),transparent)}
+.about-visual{position:relative;aspect-ratio:4/5;background:linear-gradient(145deg,#1e1e1e,#141414);border:1px solid rgba(255,45,122,.15);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:rgba(255,255,255,.2);font-size:.85rem}
+.about-visual svg{opacity:.15;width:52px;height:52px}
+.about-badge-float{position:absolute;top:28px;right:-16px;background:var(--pink);padding:12px 20px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:white;clip-path:polygon(0 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+.about-years{position:absolute;bottom:28px;left:-16px;background:var(--black);border:1px solid rgba(255,45,122,.3);padding:16px 20px}
+.about-years-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--pink);line-height:1}
+.about-years-txt{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
+.about-content p{color:rgba(255,255,255,.5);line-height:1.9;font-size:.9rem;font-weight:300;margin-bottom:18px}
+.proceso-section{background:var(--pink);padding:100px 8%}
+.proceso-section .section-label{color:rgba(255,255,255,.7)}
+.proceso-section .section-title{color:var(--white)}
+.proceso-section .section-title em{color:var(--black)}
+.proceso-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(0,0,0,.15);margin-top:56px}
+.paso{background:var(--pink);padding:44px 28px;transition:background .3s}
+.paso:hover{background:rgba(255,45,122,.85)}
+.paso-num{font-family:'Bebas Neue',sans-serif;font-size:5rem;color:rgba(255,255,255,.15);line-height:1;margin-bottom:16px}
+.paso h4{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.04em;color:white;margin-bottom:10px}
+.paso p{color:rgba(255,255,255,.75);font-size:.83rem;line-height:1.7;font-weight:300}
+.proceso-cta{margin-top:52px;text-align:center}
+.testi-preview{padding:100px 8%;background:var(--black)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,45,122,.1)}
+.testimonio{background:var(--black);padding:40px 34px;transition:background .3s}
+.testimonio:hover{background:var(--black3)}
+.stars{color:var(--pink);font-size:.85rem;letter-spacing:4px;margin-bottom:20px}
+.testimonio blockquote{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;line-height:1.75;color:rgba(255,255,255,.75);margin-bottom:24px}
+.testimonio blockquote::before{content:'\201C';font-size:2rem;color:var(--pink);line-height:0;vertical-align:-.4em;margin-right:4px}
+.testimonio cite{display:flex;align-items:center;gap:14px;font-style:normal}
+.avatar{width:40px;height:40px;border-radius:50%;background:rgba(255,45,122,.15);border:1px solid rgba(255,45,122,.3);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--pink)}
+.cite-name{font-size:.84rem;font-weight:500;color:var(--white)}
+.cite-serv{font-size:.72rem;color:var(--gray);font-weight:300;margin-top:2px}
+.cta-band{background:var(--black2);padding:80px 8%;display:flex;align-items:center;justify-content:space-between;gap:40px;border-top:1px solid rgba(255,45,122,.1);flex-wrap:wrap}
+.cta-band h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:.04em;line-height:.95}
+.cta-band h2 em{font-family:'Playfair Display',serif;font-style:italic;color:var(--pink)}
+@media(max-width:960px){
+  #inicio{grid-template-columns:1fr}
+  .hero-right{min-height:300px}
+  .hero-left{padding:100px 5% 60px}
+  .sobre-preview{grid-template-columns:1fr}
+  .about-visual{display:none}
+  .servicios-row{grid-template-columns:1fr 1fr}
+  .proceso-steps{grid-template-columns:1fr 1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .cta-band{flex-direction:column;text-align:center}
+  .preview-header{flex-direction:column;gap:16px;align-items:flex-start}
+}
+@media(max-width:600px){
+  .hero-stats{gap:24px}
+  .servicios-row{grid-template-columns:1fr}
+  .proceso-steps{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="cursor-glow" id="cursorGlow"></div>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">DORYS <span>LÓPEZ</span></a>
+  <ul class="nav-links" id="navMenu">
+    <li><a href="index.html" class="active">Inicio</a></li>
+    <li><a href="nosotros.html">Sobre mí</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+    <li><a href="testimonios.html">Reseñas</a></li>
+    <li><a href="agenda.html" class="nav-cta">Agendar cita</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+<section id="inicio">
+  <div class="hero-bg-text">BELLEZA</div>
+  <div class="hero-left">
+    <div class="hero-badge">Especialista en Belleza Facial</div>
+    <h1>TU MEJOR<br><span class="stroke">VERSIÓN</span><br>EMPIEZA<br>AQUÍ.</h1>
+    <p>Limpieza facial profunda, diseño de cejas con henna, micropigmentación de labios y cejas. Resultados que hablan por sí solos.</p>
+    <div class="hero-btns">
+      <a href="agenda.html" class="btn-primary">Agendar mi cita</a>
+      <a href="servicios.html" class="btn-outline">Ver servicios</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">500+</div><div class="stat-label">Clientas felices</div></div>
+      <div><div class="stat-num">8+</div><div class="stat-label">Años de experiencia</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-label">Productos premium</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-frame">
+      <div class="fc tl"></div><div class="fc tr"></div><div class="fc bl"></div><div class="fc br"></div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg>
+      <span style="font-size:.8rem;letter-spacing:.15em;text-transform:uppercase">Tu foto aquí</span>
+      <div class="hero-tag"><strong>Disponible</strong>Agenda hoy →</div>
+    </div>
+  </div>
+</section>
+<div class="ticker"><div class="ticker-track"><span class="ticker-item">Limpieza Facial Profunda</span><span class="ticker-item">Diseño de Cejas con Henna</span><span class="ticker-item">Micropigmentación de Labios</span><span class="ticker-item">Micropigmentación de Cejas</span><span class="ticker-item">Resultados Reales</span><span class="ticker-item">Agenda tu Cita Hoy</span><span class="ticker-item">Limpieza Facial Profunda</span><span class="ticker-item">Diseño de Cejas con Henna</span><span class="ticker-item">Micropigmentación de Labios</span><span class="ticker-item">Micropigmentación de Cejas</span><span class="ticker-item">Resultados Reales</span><span class="ticker-item">Agenda tu Cita Hoy</span></div></div>
+<section class="servicios-preview">
+  <div class="preview-header fade-in">
+    <div><div class="section-label">Servicios</div><h2 class="section-title">LO QUE<br><em>hago por ti</em></h2></div>
+    <a href="servicios.html" class="btn-outline">Ver todos →</a>
+  </div>
+  <div class="servicios-row">
+    <a href="servicios.html" class="srv-mini fade-in"><span class="srv-icon">✨</span><h3>Limpieza Facial Profunda</h3><p>Piel luminosa y libre de impurezas desde la primera sesión.</p><span class="srv-arrow">Ver más →</span></a>
+    <a href="servicios.html" class="srv-mini fade-in"><span class="srv-icon">🌿</span><h3>Diseño de Cejas + Henna</h3><p>Cejas perfectas que enmarcan tu rostro con resultado de hasta 4 semanas.</p><span class="srv-arrow">Ver más →</span></a>
+    <a href="servicios.html" class="srv-mini fade-in"><span class="srv-icon">💋</span><h3>Micropigmentación de Labios</h3><p>Color y definición semipermanente que potencia tu sonrisa.</p><span class="srv-arrow">Ver más →</span></a>
+    <a href="servicios.html" class="srv-mini fade-in"><span class="srv-icon">👁</span><h3>Micropigmentación de Cejas</h3><p>Cejas perfectas y simétricas sin esfuerzo diario.</p><span class="srv-arrow">Ver más →</span></a>
+  </div>
+</section>
+<section class="sobre-preview">
+  <div class="about-visual fade-in">
+    <div class="about-badge-float">Especialista certificada</div>
+    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg>
+    <span style="font-size:.8rem;letter-spacing:.15em;text-transform:uppercase">Foto de Dorys</span>
+    <div class="about-years"><div class="about-years-num">8+</div><div class="about-years-txt">Años de experiencia</div></div>
+  </div>
+  <div class="about-content fade-in">
+    <div class="section-label">Sobre mí</div>
+    <h2 class="section-title">HOLA, SOY<br><em>Dorys López</em></h2>
+    <p>Especialista en belleza facial con más de 8 años dedicada a transformar y realzar la belleza natural de cada clienta. Mi pasión es hacer que cada mujer se sienta segura, poderosa y radiante.</p>
+    <p>Trabajo con técnicas de vanguardia y productos premium, garantizando siempre la máxima seguridad e higiene.</p>
+    <br><a href="nosotros.html" class="btn-outline">Conocer más →</a>
+  </div>
+</section>
+<section class="proceso-section">
+  <div class="section-label">¿Cómo agendar?</div>
+  <h2 class="section-title">TU CITA EN<br><em>4 pasos</em></h2>
+  <div class="proceso-steps">
+    <div class="paso fade-in"><div class="paso-num">01</div><h4>Elegí tu servicio</h4><p>Explorá los tratamientos o escribime para asesorarte.</p></div>
+    <div class="paso fade-in"><div class="paso-num">02</div><h4>Completá el formulario</h4><p>Nombre, WhatsApp, servicio y fecha. Confirmo en 24 horas.</p></div>
+    <div class="paso fade-in"><div class="paso-num">03</div><h4>Enviá la seña</h4><p>30% por transferencia bancaria para confirmar el turno.</p></div>
+    <div class="paso fade-in"><div class="paso-num">04</div><h4>¡A lucirte!</h4><p>El día de tu cita déjate mimar. El resto lo abonás al finalizar.</p></div>
+  </div>
+  <div class="proceso-cta"><a href="agenda.html" class="btn-dark">Quiero reservar ahora →</a></div>
+</section>
+<section class="testi-preview">
+  <div class="preview-header fade-in">
+    <div><div class="section-label">Reseñas</div><h2 class="section-title">LO QUE DICEN<br><em>mis clientas</em></h2></div>
+    <a href="testimonios.html" class="btn-outline">Ver todas →</a>
+  </div>
+  <div class="testi-grid">
+    <div class="testimonio fade-in"><div class="stars">★★★★★</div><blockquote>Me hice la micropigmentación de cejas y quedé encantada. Dorys es muy profesional y el resultado es increíblemente natural.</blockquote><cite><div class="avatar">M</div><div><div class="cite-name">Marcela R.</div><div class="cite-serv">Micropigmentación de cejas</div></div></cite></div>
+    <div class="testimonio fade-in"><div class="stars">★★★★★</div><blockquote>La limpieza facial fue espectacular. Mi piel quedó suave, luminosa y sin impurezas. Ya soy clienta fija.</blockquote><cite><div class="avatar">V</div><div><div class="cite-name">Valentina S.</div><div class="cite-serv">Limpieza facial profunda</div></div></cite></div>
+    <div class="testimonio fade-in"><div class="stars">★★★★★</div><blockquote>El diseño de cejas con henna transformó mi cara. Dorys tiene un ojo increíble para el diseño. Resultado duradero y hermoso.</blockquote><cite><div class="avatar">C</div><div><div class="cite-name">Carolina M.</div><div class="cite-serv">Diseño de cejas con henna</div></div></cite></div>
+  </div>
+</section>
+<div class="cta-band fade-in">
+  <h2>¿LISTA PARA TU<br><em>transformación?</em></h2>
+  <a href="agenda.html" class="btn-primary" style="font-size:.85rem;padding:18px 44px">Agendar mi cita ahora ✦</a>
+</div>
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><div class="footer-logo">DORYS <span>LÓPEZ</span></div><p>Especialista en belleza facial. Transformando rostros con técnicas profesionales y resultados que hablan por sí solos.</p></div>
+    <div class="footer-col"><h5>Páginas</h5><ul><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Sobre mí</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="testimonios.html">Reseñas</a></li><li><a href="agenda.html">Agendar cita</a></li></ul></div>
+    <div class="footer-col"><h5>Contacto</h5><ul><li><a href="https://wa.me/TUNUMERO">WhatsApp</a></li><li><a href="https://www.instagram.com/">Instagram</a></li><li><a href="mailto:dorys@email.com">Email</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Dorys López — Todos los derechos reservados</span><div class="social-links"><a href="https://www.instagram.com/" target="_blank">Instagram</a><a href="https://wa.me/TUNUMERO" target="_blank">WhatsApp</a></div></div>
+</footer>
+<a href="https://wa.me/TUNUMERO?text=Hola%20Dorys!%20Quiero%20agendar%20una%20cita" class="wa-float" target="_blank"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.528 5.845L0 24l6.338-1.501A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.66-.506-5.186-1.388l-.372-.22-3.764.891.93-3.666-.242-.383A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg></a>
+<script src="shared.js"></script>
+<script>document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));</script>
+</body>
+</html>

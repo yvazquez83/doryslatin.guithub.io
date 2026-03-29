@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre mí — Dorys López</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.about-main{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;padding:80px 8%;background:var(--black)}
+.about-main::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--pink),transparent)}
+.about-photo{position:sticky;top:100px;aspect-ratio:3/4;background:linear-gradient(145deg,#1e1e1e,#141414);border:1px solid rgba(255,45,122,.15);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:rgba(255,255,255,.2);font-size:.85rem;position:relative}
+.about-photo svg{opacity:.15;width:64px;height:64px}
+.photo-badge{position:absolute;top:24px;right:-16px;background:var(--pink);padding:12px 20px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:white;clip-path:polygon(0 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+.about-text p{color:rgba(255,255,255,.55);line-height:1.95;font-size:.92rem;font-weight:300;margin-bottom:22px}
+.about-text h3{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.04em;color:var(--white);margin:40px 0 14px}
+.values-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,45,122,.1);margin:40px 0}
+.value-item{background:var(--black);padding:28px 24px}
+.value-icon{font-size:1.6rem;margin-bottom:12px;display:block}
+.value-item h4{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.04em;color:var(--white);margin-bottom:8px}
+.value-item p{color:rgba(255,255,255,.4);font-size:.82rem;line-height:1.65;font-weight:300}
+.certs-section{padding:80px 8%;background:var(--black2);position:relative}
+.certs-section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--pink),transparent)}
+.certs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,45,122,.1);margin-top:48px}
+.cert-item{background:var(--black2);padding:36px 28px;text-align:center;transition:background .3s}
+.cert-item:hover{background:var(--black3)}
+.cert-num{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--pink);line-height:1;margin-bottom:8px}
+.cert-item h4{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.04em;color:var(--white);margin-bottom:8px}
+.cert-item p{color:rgba(255,255,255,.4);font-size:.8rem;line-height:1.6;font-weight:300}
+.cta-band{background:var(--pink);padding:80px 8%;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.cta-band h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3rem);letter-spacing:.04em;line-height:.95;color:var(--white)}
+.cta-band h2 em{font-family:'Playfair Display',serif;font-style:italic;color:rgba(0,0,0,.6)}
+@media(max-width:960px){
+  .about-main{grid-template-columns:1fr}
+  .about-photo{display:none}
+  .certs-grid{grid-template-columns:1fr 1fr}
+  .values-grid{grid-template-columns:1fr}
+  .cta-band{flex-direction:column;text-align:center}
+}
+@media(max-width:600px){.certs-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="cursor-glow" id="cursorGlow"></div>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">DORYS <span>LÓPEZ</span></a>
+  <ul class="nav-links" id="navMenu">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="nosotros.html" class="active">Sobre mí</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+    <li><a href="testimonios.html">Reseñas</a></li>
+    <li><a href="agenda.html" class="nav-cta">Agendar cita</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg">DORYS</div>
+  <div class="section-label">Sobre mí</div>
+  <h1 class="section-title">HOLA, SOY<br><em>Dorys López</em></h1>
+  <p class="section-sub">Especialista en belleza facial con más de 8 años transformando rostros y potenciando la confianza de cada clienta.</p>
+</div>
+
+<div class="ticker"><div class="ticker-track"><span class="ticker-item">Pasión por la Belleza</span><span class="ticker-item">8+ Años de Experiencia</span><span class="ticker-item">500+ Clientas Felices</span><span class="ticker-item">Técnicas Premium</span><span class="ticker-item">Resultados Reales</span><span class="ticker-item">Pasión por la Belleza</span><span class="ticker-item">8+ Años de Experiencia</span><span class="ticker-item">500+ Clientas Felices</span><span class="ticker-item">Técnicas Premium</span><span class="ticker-item">Resultados Reales</span></div></div>
+
+<div class="about-main">
+  <div class="about-photo fade-in">
+    <div class="photo-badge">Especialista certificada</div>
+    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg>
+    <span style="font-size:.8rem;letter-spacing:.15em;text-transform:uppercase">Tu foto aquí</span>
+  </div>
+  <div class="about-text fade-in">
+    <div class="section-label">Mi historia</div>
+    <h2 class="section-title">MÁS QUE<br><em>un trabajo</em></h2>
+    <p>Desde pequeña siempre supe que mi camino estaría ligado a la belleza. Lo que comenzó como una pasión fue convirtiéndose en una profesión que hoy, con más de 8 años de trayectoria, me llena de orgullo y gratitud.</p>
+    <p>Me formé con los mejores referentes del sector y continúo actualizándome constantemente para ofrecer las técnicas más modernas y seguras del mercado. Cada clienta que pasa por mis manos se convierte en una historia de transformación y confianza.</p>
+    <p>Trabajo desde un espacio diseñado para que te sientas cómoda, relajada y en total confianza. La higiene, el cuidado y la personalización son mis pilares fundamentales en cada procedimiento.</p>
+    <h3>Mi filosofía</h3>
+    <p>Creo que cada mujer tiene una belleza única que merece ser realzada, no transformada. Mi objetivo no es cambiarte, sino potenciar lo que ya sos. Cada tratamiento está pensado para que el resultado sea tan natural que parezca que simplemente "naciste así".</p>
+    <div class="values-grid">
+      <div class="value-item"><span class="value-icon">💎</span><h4>Calidad premium</h4><p>Solo trabajo con productos certificados y de primera línea del mercado.</p></div>
+      <div class="value-item"><span class="value-icon">🛡</span><h4>Seguridad total</h4><p>Protocolos de higiene estrictos en cada procedimiento, sin excepción.</p></div>
+      <div class="value-item"><span class="value-icon">✨</span><h4>Resultados naturales</h4><p>Técnicas que realzan tu belleza sin perder tu esencia y personalidad.</p></div>
+      <div class="value-item"><span class="value-icon">💬</span><h4>Trato personalizado</h4><p>Te acompaño antes, durante y después de cada tratamiento.</p></div>
+    </div>
+    <a href="agenda.html" class="btn-primary">Agendar mi cita ✦</a>
+  </div>
+</div>
+
+<section class="certs-section">
+  <div class="section-label">Formación</div>
+  <h2 class="section-title">EN NÚMEROS</h2>
+  <div class="certs-grid">
+    <div class="cert-item fade-in"><div class="cert-num">8+</div><h4>Años de experiencia</h4><p>Dedicados al cuidado y embellecimiento facial profesional.</p></div>
+    <div class="cert-item fade-in"><div class="cert-num">500+</div><h4>Clientas felices</h4><p>Cada una con una historia de transformación y confianza recuperada.</p></div>
+    <div class="cert-item fade-in"><div class="cert-num">4</div><h4>Especialidades</h4><p>Limpieza facial, henna, micropigmentación de labios y cejas.</p></div>
+    <div class="cert-item fade-in"><div class="cert-num">100%</div><h4>Satisfacción</h4><p>Compromiso total con el resultado y bienestar de cada clienta.</p></div>
+  </div>
+</section>
+
+<div class="cta-band fade-in">
+  <h2>¿QUERÉS CONOCERME<br><em>en persona?</em></h2>
+  <a href="agenda.html" class="btn-dark">Reservar mi cita →</a>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><div class="footer-logo">DORYS <span>LÓPEZ</span></div><p>Especialista en belleza facial. Transformando rostros con técnicas profesionales y resultados que hablan por sí solos.</p></div>
+    <div class="footer-col"><h5>Páginas</h5><ul><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Sobre mí</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="testimonios.html">Reseñas</a></li><li><a href="agenda.html">Agendar cita</a></li></ul></div>
+    <div class="footer-col"><h5>Contacto</h5><ul><li><a href="https://wa.me/TUNUMERO">WhatsApp</a></li><li><a href="https://www.instagram.com/">Instagram</a></li><li><a href="mailto:dorys@email.com">Email</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Dorys López</span><div class="social-links"><a href="https://www.instagram.com/" target="_blank">Instagram</a><a href="https://wa.me/TUNUMERO" target="_blank">WhatsApp</a></div></div>
+</footer>
+<a href="https://wa.me/TUNUMERO?text=Hola%20Dorys!" class="wa-float" target="_blank"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.528 5.845L0 24l6.338-1.501A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.66-.506-5.186-1.388l-.372-.22-3.764.891.93-3.666-.242-.383A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg></a>
+<script src="shared.js"></script>
+<script>document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));</script>
+</body>
+</html>

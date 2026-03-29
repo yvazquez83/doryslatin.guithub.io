@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reseñas — Dorys López</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.stats-band{background:var(--pink);display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background-color:var(--pink)}
+.stat-box{background:var(--pink);padding:40px 28px;text-align:center;border-right:1px solid rgba(255,255,255,.15)}
+.stat-box:last-child{border-right:none}
+.stat-big{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--white);line-height:1;margin-bottom:6px}
+.stat-txt{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7);font-weight:500}
+.testimonios-section{padding:80px 8%;background:var(--black)}
+.testi-masonry{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,45,122,.1)}
+.testimonio{background:var(--black);padding:40px 34px;transition:background .3s}
+.testimonio:hover{background:var(--black3)}
+.testimonio.featured{background:var(--black3);border-left:3px solid var(--pink)}
+.testimonio blockquote{font-family:'Playfair Display',serif;font-style:italic;line-height:1.75;color:rgba(255,255,255,.75);margin-bottom:24px}
+.testimonio.featured blockquote{font-size:1.1rem}
+.testimonio:not(.featured) blockquote{font-size:.95rem}
+.testimonio blockquote::before{content:'\201C';font-size:2.2rem;color:var(--pink);line-height:0;vertical-align:-.45em;margin-right:4px}
+.testimonio cite{display:flex;align-items:center;gap:14px;font-style:normal}
+.cite-name{font-size:.85rem;font-weight:500;color:var(--white)}
+.cite-serv{font-size:.72rem;color:var(--gray);font-weight:300;margin-top:2px}
+.galeria-section{padding:80px 8%;background:var(--black2);position:relative}
+.galeria-section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--pink),transparent)}
+.galeria-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px}
+.galeria-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:auto auto;gap:4px}
+.galeria-item{background:linear-gradient(145deg,#1e1e1e,#141414);border:1px solid rgba(255,45,122,.08);aspect-ratio:1;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .3s}
+.galeria-item:hover{border-color:rgba(255,45,122,.35)}
+.galeria-item:first-child{grid-row:span 2;aspect-ratio:auto}
+.galeria-item .ph{font-size:2rem;opacity:.12}
+.galeria-item::after{content:attr(data-label);position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(10,10,10,.85));color:rgba(255,255,255,.6);padding:24px 14px 12px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;transform:translateY(100%);transition:transform .3s}
+.galeria-item:hover::after{transform:translateY(0)}
+.cta-band{background:var(--black);padding:80px 8%;display:flex;align-items:center;justify-content:space-between;gap:40px;border-top:1px solid rgba(255,45,122,.15);flex-wrap:wrap}
+.cta-band h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3rem);letter-spacing:.04em;line-height:.95;color:var(--white)}
+.cta-band h2 em{font-family:'Playfair Display',serif;font-style:italic;color:var(--pink)}
+@media(max-width:960px){
+  .stats-band{grid-template-columns:1fr 1fr}
+  .testi-masonry{grid-template-columns:1fr}
+  .galeria-grid{grid-template-columns:repeat(2,1fr)}
+  .galeria-item:first-child{grid-row:span 1;aspect-ratio:1}
+  .galeria-header{flex-direction:column;gap:16px;align-items:flex-start}
+  .cta-band{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+<div class="cursor-glow" id="cursorGlow"></div>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">DORYS <span>LÓPEZ</span></a>
+  <ul class="nav-links" id="navMenu">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="nosotros.html">Sobre mí</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+    <li><a href="testimonios.html" class="active">Reseñas</a></li>
+    <li><a href="agenda.html" class="nav-cta">Agendar cita</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg">RESEÑAS</div>
+  <div class="section-label">Reseñas</div>
+  <h1 class="section-title">LO QUE DICEN<br><em>mis clientas</em></h1>
+  <p class="section-sub">Cada reseña es una historia de transformación. La satisfacción de cada clienta es mi mayor motivación y el reflejo de mi trabajo.</p>
+</div>
+
+<div class="stats-band">
+  <div class="stat-box"><div class="stat-big">500+</div><div class="stat-txt">Clientas atendidas</div></div>
+  <div class="stat-box"><div class="stat-big">5.0</div><div class="stat-txt">Puntuación promedio</div></div>
+  <div class="stat-box"><div class="stat-big">8+</div><div class="stat-txt">Años de trayectoria</div></div>
+  <div class="stat-box"><div class="stat-big">100%</div><div class="stat-txt">Recomendarían</div></div>
+</div>
+
+<section class="testimonios-section">
+  <div class="section-label" style="margin-bottom:48px">Todas las reseñas</div>
+  <div class="testi-masonry">
+    <div class="testimonio featured fade-in">
+      <div class="stars">★★★★★</div>
+      <blockquote>Me hice la micropigmentación de cejas y quedé absolutamente encantada. Dorys es increíblemente profesional, me explicó todo el proceso paso a paso y el resultado es tan natural que nadie creería que no son mis cejas reales. ¡Ya no necesito maquillarme por las mañanas!</blockquote>
+      <cite><div class="avatar">M</div><div><div class="cite-name">Marcela R.</div><div class="cite-serv">Micropigmentación de cejas</div></div></cite>
+    </div>
+    <div class="testimonio fade-in">
+      <div class="stars">★★★★★</div>
+      <blockquote>La limpieza facial fue espectacular. Mi piel quedó suave, luminosa y completamente libre de impurezas. El ambiente es muy tranquilo y se nota que usa productos de primera calidad. Ya soy clienta fija.</blockquote>
+      <cite><div class="avatar">V</div><div><div class="cite-name">Valentina S.</div><div class="cite-serv">Limpieza facial profunda</div></div></cite>
+    </div>
+    <div class="testimonio fade-in">
+      <div class="stars">★★★★★</div>
+      <blockquote>El diseño de cejas con henna transformó completamente mi cara. Dorys tiene un ojo increíble para el diseño, supo exactamente qué forma me favorecía. El resultado duró mucho más de lo esperado.</blockquote>
+      <cite><div class="avatar">C</div><div><div class="cite-name">Carolina M.</div><div class="cite-serv">Diseño de cejas con henna</div></div></cite>
+    </div>
+    <div class="testimonio fade-in">
+      <div class="stars">★★★★★</div>
+      <blockquote>Me hice la micropigmentación de labios y quedé enamorada del resultado. El color es hermoso y muy natural. El proceso fue cómodo gracias a la anestesia. ¡Lo recomiendo a todas mis amigas!</blockquote>
+      <cite><div class="avatar">L</div><div><div class="cite-name">Laura P.</div><div class="cite-serv">Micropigmentación de labios</div></div></cite>
+    </div>
+    <div class="testimonio fade-in">
+      <div class="stars">★★★★★</div>
+      <blockquote>Llevaba años queriendo hacerme las cejas con micropigmentación y por fin me animé con Dorys. El resultado superó todas mis expectativas. Mis cejas quedaron perfectas, simétricas y naturalísimas.</blockquote>
+      <cite><div class="avatar">S</div><div><div class="cite-name">Sofía G.</div><div class="cite-serv">Micropigmentación de cejas</div></div></cite>
+    </div>
+    <div class="testimonio featured fade-in">
+      <div class="stars">★★★★★</div>
+      <blockquote>Vengo hace más de 2 años a hacerme la limpieza facial cada mes y la diferencia en mi piel es increíble. Dorys siempre adapta el tratamiento a cómo está mi piel ese día. Es una profesional de verdad que ama lo que hace.</blockquote>
+      <cite><div class="avatar">A</div><div><div class="cite-name">Ana B.</div><div class="cite-serv">Limpieza facial (clienta frecuente)</div></div></cite>
+    </div>
+    <div class="testimonio fade-in">
+      <div class="stars">★★★★★</div>
+      <blockquote>Fui por el diseño de cejas con henna y no puedo creer la diferencia. Mis cejas siempre fueron irregulares y ahora se ven perfectas. El tono que eligió Dorys fue exactamente el que yo quería.</blockquote>
+      <cite><div class="avatar">R</div><div><div class="cite-name">Romina T.</div><div class="cite-serv">Diseño de cejas con henna</div></div></cite>
+    </div>
+    <div class="testimonio fade-in">
+      <div class="stars">★★★★★</div>
+      <blockquote>La micropigmentación de labios cambió mi vida. Siempre fui insegura con mis labios porque los tenía muy delgados. Ahora tengo color y definición todo el día sin maquillaje. El proceso fue muy cómodo.</blockquote>
+      <cite><div class="avatar">P</div><div><div class="cite-name">Paula C.</div><div class="cite-serv">Micropigmentación de labios</div></div></cite>
+    </div>
+    <div class="testimonio fade-in">
+      <div class="stars">★★★★★</div>
+      <blockquote>Excelente profesional. Muy prolija, higiénica y con mucha paciencia para explicar cada paso. Los resultados son increíbles y duraderos. Sin dudas la recomendaría a cualquiera que quiera verse hermosa.</blockquote>
+      <cite><div class="avatar">N</div><div><div class="cite-name">Natalia F.</div><div class="cite-serv">Limpieza facial + henna</div></div></cite>
+    </div>
+  </div>
+</section>
+
+<section class="galeria-section">
+  <div class="galeria-header fade-in">
+    <div><div class="section-label">Galería</div><h2 class="section-title">ANTES &amp;<br><em>después</em></h2></div>
+    <a href="https://www.instagram.com/" target="_blank" class="btn-outline">Ver Instagram →</a>
+  </div>
+  <div class="galeria-grid">
+    <div class="galeria-item" data-label="Micropigmentación de cejas — pelo a pelo"><span class="ph">📷</span></div>
+    <div class="galeria-item" data-label="Diseño de cejas con henna"><span class="ph">📷</span></div>
+    <div class="galeria-item" data-label="Limpieza facial profunda"><span class="ph">📷</span></div>
+    <div class="galeria-item" data-label="Micropigmentación de labios"><span class="ph">📷</span></div>
+    <div class="galeria-item" data-label="Diseño de cejas clásico"><span class="ph">📷</span></div>
+  </div>
+</section>
+
+<div class="cta-band fade-in">
+  <h2>¿LISTA PARA SER LA<br><em>próxima historia?</em></h2>
+  <a href="agenda.html" class="btn-primary" style="font-size:.85rem;padding:18px 44px">Agendar mi cita ✦</a>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><div class="footer-logo">DORYS <span>LÓPEZ</span></div><p>Especialista en belleza facial. Transformando rostros con técnicas profesionales y resultados que hablan por sí solos.</p></div>
+    <div class="footer-col"><h5>Páginas</h5><ul><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Sobre mí</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="testimonios.html">Reseñas</a></li><li><a href="agenda.html">Agendar cita</a></li></ul></div>
+    <div class="footer-col"><h5>Contacto</h5><ul><li><a href="https://wa.me/TUNUMERO">WhatsApp</a></li><li><a href="https://www.instagram.com/">Instagram</a></li><li><a href="mailto:dorys@email.com">Email</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Dorys López</span><div class="social-links"><a href="https://www.instagram.com/" target="_blank">Instagram</a><a href="https://wa.me/TUNUMERO" target="_blank">WhatsApp</a></div></div>
+</footer>
+<a href="https://wa.me/TUNUMERO?text=Hola%20Dorys!" class="wa-float" target="_blank"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.528 5.845L0 24l6.338-1.501A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.66-.506-5.186-1.388l-.372-.22-3.764.891.93-3.666-.242-.383A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg></a>
+<script src="shared.js"></script>
+<script>document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));</script>
+</body>
+</html>
